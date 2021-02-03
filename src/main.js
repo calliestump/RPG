@@ -15,7 +15,6 @@ $(document).ready(function() {
       console.log("you've selected", currentCharacter, "as your character!");
       $("#characterHealth-value").text(`Health: ${billHealth}`);
       $('#villainHealth-value').text(`Health: ${witchState.health}`);
-      // $('#soil-value').text(`Soil: ${newState.soil}`);
       console.log(Bill().health);
     } else if (currentCharacter == "zoey") {
       console.log("you've selected", currentCharacter, "as your character!");
@@ -28,12 +27,10 @@ $(document).ready(function() {
   });
 
   $('#smallAttack').click(function() {
-    // Moved this into the click function to register what charecter was chosen. 
-
-    const witchState = Witch(toVillSmallAttack);
-    
+    let witchState = Witch(toVillSmallAttack);
     $('#notifications-value').text("You've attacked the enemy with a small attack");
     $('#villainHealth-value').text(`Health: ${witchState.health}`);
+
     if (witchState.health <= 0) {
       $('#smallAttack').hide();
       $('#largeAttack').hide();
@@ -43,9 +40,9 @@ $(document).ready(function() {
 
   $('#largeAttack').click(function() {
     const witchState = Witch(toVillLargeAttack);
-
     $('#notifications-value').text("You've attacked the enemy with a large attack");
     $('#villainHealth-value').text(`Health: ${witchState.health}`);
+
     if (witchState.health <= 0) {
       $('#largeAttack').hide();
       $('#smallAttack').hide();
