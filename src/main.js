@@ -5,22 +5,33 @@ import './css/styles.css';
 import {Witch, toVillSmallAttack, toVillLargeAttack, Bill, Zoey} from './js/character.js';
 
 $(document).ready(function() {
-// const billState = Bill.storeState();
-// const zoeyState = Zoey.storeState();
-  var currentCharacter = $("#character").val();
+  $('#choosecharacter').click(function() {
+    const witchState = Witch();
+    const billHealth = Bill().health;
+    const zoeyHealth = Zoey().health;
+    var currentCharacter = $("#character").val();
 
-  if (currentCharacter == "bill") {
-    console.log("you've selected bill as your character!");
-    $("characterHealth-value").text(Bill.health);
-  } else if (currentCharacter == "zoey") {
-    console.log("you've selected zoey as your character!");
-    $("characterHealth-value").text(Zoey.health);
-
-  }
+    if (currentCharacter == "bill") {
+      console.log("you've selected", currentCharacter, "as your character!");
+      $("#characterHealth-value").text(`Health: ${billHealth}`);
+      $('#villainHealth-value').text(`Health: ${witchState.health}`);
+      // $('#soil-value').text(`Soil: ${newState.soil}`);
+      console.log(Bill().health);
+    } else if (currentCharacter == "zoey") {
+      console.log("you've selected", currentCharacter, "as your character!");
+      $("#characterHealth-value").text(`Health: ${zoeyHealth}`);
+      $('#villainHealth-value').text(`Health: ${witchState.health}`);
+      console.log(Zoey().health);
+    } else {
+      console.log("please choose a character!");
+    }
+  });
 
   $('#smallAttack').click(function() {
-    const witchState = Witch(toVillSmallAttack);
+    // Moved this into the click function to register what charecter was chosen. 
 
+    const witchState = Witch(toVillSmallAttack);
+    
     $('#notifications-value').text("You've attacked the enemy with a small attack");
     $('#villainHealth-value').text(`Health: ${witchState.health}`);
     if (witchState.health <= 0) {

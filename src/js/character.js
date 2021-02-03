@@ -43,7 +43,7 @@ export const storeState = (intialState) => {
 // [Protagonists]
 // export const Bill = storeState({health: 100, speed: 4, damage: 6, damageReduction: -10});
 // export const Zoey = storeState({health: 100, speed: 7, damage: 8, damageReduction: -10});
-export const Bill = storeState({health: 100, speed: 6});
+export const Bill = storeState({health: 200, speed: 6});
 export const Zoey = storeState({health: 80, speed: 7});
 
 // [Antagonists]
@@ -67,6 +67,8 @@ export const toVillLargeAttack = changeState("health")(-40);
 
 export const toCharSmallAttack = changeState("health")(-10);
 export const toCharLargeAttack = changeState("health")(-20);
+
+export const backToBaseHealth = changeState();
 
 // const bazooka = changeState("damage")(20);
 // const baseWeapon = changeState("damage")();
