@@ -7,8 +7,8 @@
 </head>
 <body>
   <div class="container">
-    <div class="gameplayButtons">
-      <!-- <h1>RPG</h1> -->
+    <!-- <h1>RPG</h1> -->
+    <div class="characterSelection">
       <hr /><br />
       <h3><strong>Character Selection</strong></h3><br />
       <select name="character" id="character">
@@ -17,23 +17,25 @@
         <option value="zoey">Zoey</option>
       </select><br /><br />
       <button class="btn-success>" id="choosecharacter">Choose</button>
-      <hr />
+    </div>
+    <hr />
+    <div class="gamingArea">
       <h3><strong>Gaming</strong></h3><br />
       <button class="btn-success>" id="smallAttack">Small Attack</button>
       <button class="btn-success>" id="largeAttack">Large Attack</button>
+      <br /><br />
+      <div class="characterValues">
+        <h2><strong>Your Values</strong></h2>
+        <h3><div id="characterHealth-value"></div></h3>
+      <div>
+      <br />
+      <div class="villainValues">
+        <h2><strong>Villains Values</strong></h2>
+        <h3><div id="villainHealth-value"></div></h3>
+      </div>
+      <br />
+      <hr />
     </div>
-    <br />
-    <div class="characterValues">
-      <h2><strong>Your Values</strong></h2>
-      <h3><div id="characterHealth-value"></div></h3>
-    <div>
-    <br />
-    <div class="villainValues">
-      <h2><strong>Villains Values</strong></h2>
-      <h3><div id="villainHealth-value"></div></h3>
-    </div>
-    <br />
-    <hr />
     <div class="notifications">
       <h1>Notifications:</h1>
       <h3><div id="notifications-value"></div></h3>

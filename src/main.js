@@ -6,18 +6,19 @@ import {Witch, toVillSmallAttack, toVillLargeAttack, Bill, Zoey} from './js/char
 
 $(document).ready(function() {
   $('#choosecharacter').click(function() {
+    $(".gamingArea").show();
+    $(".characterSelection").hide();
     const witchState = Witch();
     const billHealth = Bill().health;
     const zoeyHealth = Zoey().health;
     var currentCharacter = $("#character").val();
-
     if (currentCharacter == "bill") {
-      console.log("you've selected", currentCharacter, "as your character!");
+      $('#notifications-value').text("you've selected Bill as your character!");
       $("#characterHealth-value").text(`Health: ${billHealth}`);
       $('#villainHealth-value').text(`Health: ${witchState.health}`);
       console.log(Bill().health);
     } else if (currentCharacter == "zoey") {
-      console.log("you've selected", currentCharacter, "as your character!");
+      $('#notifications-value').text("you've selected Zoey as your character!");
       $("#characterHealth-value").text(`Health: ${zoeyHealth}`);
       $('#villainHealth-value').text(`Health: ${witchState.health}`);
       console.log(Zoey().health);

@@ -58,7 +58,7 @@ export const Hunter = storeState({health: 30, speed: 6});
 export const Jockey = storeState({health: 40, speed: 10});
 export const Spitter = storeState({health: 20, speed: 6});
 
-export const villainArr = [Witch(), Tank(), Boomer(), Charger(), Hunter(), Jockey(), Spitter()];
+export const villainArr = [Witch, Tank, Boomer, Charger, Hunter, Jockey, Spitter];
 // This is a function factory. We can easily create more specific functions that alter a plant's soil, water, and light to varying degrees.
 export const changeState = (prop) => {
   return (value) => {
