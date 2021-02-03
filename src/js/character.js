@@ -44,7 +44,7 @@ export const storeState = (intialState) => {
 // export const Bill = storeState({health: 100, speed: 4, damage: 6, damageReduction: -10});
 // export const Zoey = storeState({health: 100, speed: 7, damage: 8, damageReduction: -10});
 export const Bill = storeState({health: 100, speed: 6});
-export const Zoey = storeState({health: 100, speed: 7});
+export const Zoey = storeState({health: 80, speed: 7});
 
 // [Antagonists]
 // export const Witch = storeState({health: 60, speed: 7, damage: 10});

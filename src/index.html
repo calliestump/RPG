@@ -8,24 +8,36 @@
 <body>
   <div class="container">
     <div class="gameplayButtons">
+      <!-- <h1>RPG</h1> -->
+      <hr /><br />
+      <h3><strong>Character Selection</strong></h3><br />
+      <select name="character" id="character">
+        <option value="bill">Bill</option>
+        <option value="zoey">Zoey</option>
+      </select><br /><br />
       <hr />
+      <h3><strong>Gaming</strong></h3><br />
       <button class="btn-success>" id="smallAttack">Small Attack</button>
       <button class="btn-success>" id="largeAttack">Large Attack</button>
     </div>
     <br />
     <div class="characterValues">
-      <h1>Your Character Values</h1>
+      <h2><strong>Your Values</strong></h2>
       <h3><div id="characterHealth-value">Health: 100</div></h3>
     <div>
     <br />
     <div class="villainValues">
-      <h1>Villains Values</h1>
+      <h2><strong>Villains Values</strong></h2>
       <h3><div id="villainHealth-value">Health: 60</div></h3>
     </div>
+    <br />
+    <hr />
     <div class="notifications">
       <h1>Notifications:</h1>
       <h3><div id="notifications-value"></div></h3>
     </div>
+    <hr /><br />
+    <button onClick="window.location.reload();" class="btn-success>" id="restart">Restart Game</button>
   </div>
 </body>
 </html>
