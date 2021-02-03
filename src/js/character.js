@@ -1,15 +1,18 @@
-character types...
+// [CHARACTER TYPES]
 
-Boomer - explosive
-Charger - berserker
-Hunter - assassin
-Jockey - manic
-Spitter - poisonous
-Tank - heavy
-Witch - wrath
+// [Antagonists]
 
-Protagonists
+// Boomer - explosive
+// Charger - berserker
+// Hunter - assassin
+// Jockey - manic
+// Spitter - poisonous
+// Tank - heavy
+// Witch - wrath
 
-sharpshooter
-melee
-explosives
+// [Protagonists]- [starting weapon]
+
+// Bill - assault rifle
+// Zoey - sniper
+// Francis - shotgun
+// Louis - machine gun
