@@ -43,12 +43,12 @@ export const storeState = (intialState) => {
 // [Protagonists]
 // export const Bill = storeState({health: 100, speed: 4, damage: 6, damageReduction: -10});
 // export const Zoey = storeState({health: 100, speed: 7, damage: 8, damageReduction: -10});
-export const Bill = storeState({health: 100});
-export const Zoey = storeState({health: 100});
+export const Bill = storeState({health: 100, speed: 6});
+export const Zoey = storeState({health: 100, speed: 7});
 
 // [Antagonists]
 // export const Witch = storeState({health: 60, speed: 7, damage: 10});
-export const Witch = storeState({health: 60});
+export const Witch = storeState({health: 60, speed: 4});
 
 // This is a function factory. We can easily create more specific functions that alter a plant's soil, water, and light to varying degrees.
 export const changeState = (prop) => {
