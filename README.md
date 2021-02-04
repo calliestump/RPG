@@ -57,42 +57,8 @@ git remote add origin [repo. link]
 * GitHub
 * .JSON
 
-## **Specs**
-```
-let "" = ""
-```
-**Tests**
-```
-Describe: 
-Test: 
-Expect 
-```
-```
-Describe: 
-Test: 
-Expect
-```
-```
-Describe: 
-Test: 
-Expect 
-```
-```
-Describe: 
-Test: 
-Expect 
-```
-```
-Describe: 
-Test: 
-Expect 
-```
-```
-Describe: 
-Test: 
-Expect 
-```
-
+## **Bugs Found**
+* Users character is invincible. No functionality for enemy damage. 
 ## Legal
 ```
 MIT License

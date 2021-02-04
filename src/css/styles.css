@@ -13,3 +13,11 @@ body {
 #container.card {
   color: beige;  
 }
+
+#nextEnemy {
+  display: none;  
+}
+
+#gameOver {
+  display: none;  
+}

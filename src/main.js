@@ -5,8 +5,8 @@ import './css/styles.css';
 import {toVillSmallAttack, toVillLargeAttack, Bill, Zoey, Louis, Francis, villainArr} from './js/character.js';
 
 $(document).ready(function() {
-  let counter = 0;
-  let villainState = villainArr[counter]();
+  let villainCounter = 0;
+  let villainState = villainArr[villainCounter]();
   
   $('#choosecharacter').click(function() {
     $(".gamingArea").show();
@@ -16,23 +16,27 @@ $(document).ready(function() {
     const louisHealth = Louis().health;
     const francisHealth = Francis().health;
     var currentCharacter = $("#character").val();
-    if (currentCharacter == "bill") {
-      $('#notifications-value').text("you've selected Bill as your character!");
+    if (currentCharacter == "Bill") {
+      $('#characterSelected').text(`You've selected '${currentCharacter}' as your character!`);
+      $('#notifications-value').text(`You're now being attacked by a ${villainState.name}`);
       $("#characterHealth-value").text(`Health: ${billHealth}`);
       $('#villainHealth-value').text(`Health: ${villainState.health}`);
       console.log(Bill().health);
-    } else if (currentCharacter == "zoey") {
-      $('#notifications-value').text("you've selected Zoey as your character!");
+    } else if (currentCharacter == "Zoey") {
+      $('#characterSelected').text(`You've selected '${currentCharacter}' as your character!`);
+      $('#notifications-value').text(`You're now being attacked by a ${villainState.name}`);
       $("#characterHealth-value").text(`Health: ${zoeyHealth}`);
       $('#villainHealth-value').text(`Health: ${villainState.health}`);
       console.log(Zoey().health);
-    } else if (currentCharacter == "louis") {
-      $('#notifications-value').text("you've selected Louis as your character!");
+    } else if (currentCharacter == "Louis") {
+      $('#characterSelected').text(`You've selected '${currentCharacter}' as your character!`);
+      $('#notifications-value').text(`You're now being attacked by a ${villainState.name}`);
       $("#characterHealth-value").text(`Health: ${louisHealth}`);
       $('#villainHealth-value').text(`Health: ${villainState.health}`);
       console.log(Louis().health);
-    } else if (currentCharacter == "francis") {
-      $('#notifications-value').text("you've selected Francis as your character!");
+    } else if (currentCharacter == "Francis") {
+      $('#characterSelected').text(`You've selected '${currentCharacter}' as your character!`);
+      $('#notifications-value').text(`You're now being attacked by a ${villainState.name}`);
       $("#characterHealth-value").text(`Health: ${francisHealth}`);
       $('#villainHealth-value').text(`Health: ${villainState.health}`);
       console.log(Francis().health);
@@ -42,28 +46,51 @@ $(document).ready(function() {
   });
   
   $('#smallAttack').click(function() {
-    let villainState = villainArr[counter](toVillSmallAttack);
+    let villainState = villainArr[villainCounter](toVillSmallAttack);
     $('#notifications-value').text("You've attacked the enemy with a small attack");
     $('#villainHealth-value').text(`Health: ${villainState.health}`);
+    $("#characterSelected").hide();
 
-    if(villainState.health <= 0) {
-      counter++;
-      console.log(counter);
+    if (villainState.health <= 0) {
+      villainCounter++;
+      console.log(villainCounter);
       $('#notifications-value').text(`${villainState.name} has died!`);
       $('#villainHealth-value').text(`Health: ${villainState.health}`);
+      $("#nextEnemy").show(); 
+    }
+    if (villainCounter > 6) {
+      $("#smallAttack").hide();
+      $("#largeAttack").hide();
+      $("#nextEnemy").hide();
+      $('#gameOver').show();
     }
   });
 
   $('#largeAttack').click(function() {
-    let villainState = villainArr[counter](toVillLargeAttack);
+    let villainState = villainArr[villainCounter](toVillLargeAttack);
     $('#notifications-value').text("You've attacked the enemy with a large attack");
     $('#villainHealth-value').text(`Health: ${villainState.health}`);
-
+    $("#characterSelected").hide();
+    
     if (villainState.health <= 0) {
-      counter++;
-      console.log(counter);
+      villainCounter++;
+      console.log(villainCounter);
       $('#notifications-value').text(`${villainState.name} has died!`);
       $('#villainHealth-value').text(`Health: ${villainState.health}`);
+      $("#nextEnemy").show();
     }
+    if (villainCounter > 6) {
+      $("#smallAttack").hide();
+      $("#largeAttack").hide();
+      $("#nextEnemy").hide();
+      $('#gameOver').show();
+    }
+  });
+
+  $('#nextEnemy').click(function() {
+    let villainState = villainArr[villainCounter]();
+    $('#notifications-value').text(`You're now being attacked by a ${villainState.name}`);
+    $('#villainHealth-value').text(`Health: ${villainState.health}`);
+    $("#nextEnemy").hide();
   });
 });

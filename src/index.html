@@ -13,10 +13,10 @@
       <h3><strong>Character Selection</strong></h3><br />
       <select name="character" id="character">
         <option value="placeholder">---</option>
-        <option value="bill">Bill</option>
-        <option value="zoey">Zoey</option>
-        <option value="louis">Louis</option>
-        <option value="francis">Francis</option>
+        <option value="Bill">Bill</option>
+        <option value="Zoey">Zoey</option>
+        <option value="Louis">Louis</option>
+        <option value="Francis">Francis</option>
       </select><br /><br />
       <button class="btn-success>" id="choosecharacter">Choose</button>
       <hr />
@@ -30,7 +30,7 @@
       <div class="characterValues">
         <h2><strong>Your Values</strong></h2>
         <h3><div id="characterHealth-value"></div></h3>
-      <div>
+      </div>
       <br />
       <div class="villainValues">
         <h2><strong>Villains Values</strong></h2>
@@ -40,11 +40,16 @@
       <hr />
     </div>
     <div class="notifications">
-      <h1>Notifications:</h1>
+      <h1>Notifications</h1>
+      <h3><div id="characterSelected"></div></h3>
       <h3><div id="notifications-value"></div></h3>
     </div>
     <hr /><br />
-    <button onClick="window.location.reload();" class="btn-success>" id="restart">Restart Game</button>
+    <button class="btn-success>" id="nextEnemy">Next Enemy</button>
+    <div id="gameOver">
+      <h1>Congratulations! You survived.</h1>
+      <button onClick="window.location.reload();" class="btn-success>" id="restart">Restart Game</button>
+    </div>
   </div>
 </body>
 </html>
