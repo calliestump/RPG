@@ -23,7 +23,7 @@ $(document).ready(function() {
       $('#villainHealth-value').text(`Health: ${witchState.health}`);
       console.log(Zoey().health);
     } else {
-      console.log("please choose a character!");
+      $('#notifications-value').text("please choose a character!");
     }
   });
 

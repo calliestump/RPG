@@ -9,3 +9,7 @@ body {
 .gamingArea {
   display: none;
 }
+
+#container.card {
+  color: beige;  
+}

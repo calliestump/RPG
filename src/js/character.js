@@ -77,7 +77,8 @@ export const toVillLargeAttack = changeState("health")(-40);
 export const toCharSmallAttack = changeState("health")(-10);
 export const toCharLargeAttack = changeState("health")(-20);
 
-export const backToBaseHealth = changeState();
+export const toVillLeveUp = changeState("health")(20);
+export const toCharLeveUp = changeState("health")(40);
 
 // const bazooka = changeState("damage")(20);
 // const baseWeapon = changeState("damage")();
