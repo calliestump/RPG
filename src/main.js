@@ -2,7 +2,7 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import {toVillSmallAttack, toVillLargeAttack, Bill, Zoey, villainArr} from './js/character.js';
+import {toVillSmallAttack, toVillLargeAttack, Bill, Zoey, Louis, Francis, villainArr} from './js/character.js';
 
 $(document).ready(function() {
   let counter = 0;
@@ -13,6 +13,8 @@ $(document).ready(function() {
     $(".characterSelection").hide();
     const billHealth = Bill().health;
     const zoeyHealth = Zoey().health;
+    const louisHealth = Louis().health;
+    const francisHealth = Francis().health;
     var currentCharacter = $("#character").val();
     if (currentCharacter == "bill") {
       $('#notifications-value').text("you've selected Bill as your character!");
@@ -24,11 +26,20 @@ $(document).ready(function() {
       $("#characterHealth-value").text(`Health: ${zoeyHealth}`);
       $('#villainHealth-value').text(`Health: ${villainState.health}`);
       console.log(Zoey().health);
+    } else if (currentCharacter == "louis") {
+      $('#notifications-value').text("you've selected Louis as your character!");
+      $("#characterHealth-value").text(`Health: ${louisHealth}`);
+      $('#villainHealth-value').text(`Health: ${villainState.health}`);
+      console.log(Louis().health);
+    } else if (currentCharacter == "francis") {
+      $('#notifications-value').text("you've selected Francis as your character!");
+      $("#characterHealth-value").text(`Health: ${francisHealth}`);
+      $('#villainHealth-value').text(`Health: ${villainState.health}`);
+      console.log(Francis().health);
     } else {
       $('#notifications-value').text("please choose a character!");
     }
   });
-  // counter = 0;
   
   $('#smallAttack').click(function() {
     let villainState = villainArr[counter](toVillSmallAttack);
@@ -38,7 +49,7 @@ $(document).ready(function() {
     if(villainState.health <= 0) {
       counter++;
       console.log(counter);
-      $('#notifications-value').text("The enemy has died!");
+      $('#notifications-value').text(`${villainState.name} has died!`);
       $('#villainHealth-value').text(`Health: ${villainState.health}`);
     }
   });
@@ -49,9 +60,10 @@ $(document).ready(function() {
     $('#villainHealth-value').text(`Health: ${villainState.health}`);
 
     if (villainState.health <= 0) {
-      $('#notifications-value').text("The enemy has died!");
+      counter++;
+      console.log(counter);
+      $('#notifications-value').text(`${villainState.name} has died!`);
+      $('#villainHealth-value').text(`Health: ${villainState.health}`);
     }
   });
-
-  // event.preventDefault();
 });
