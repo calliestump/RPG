@@ -43,22 +43,22 @@ export const storeState = (intialState) => {
 // [Protagonists]
 // export const Bill = storeState({health: 100, speed: 4, damage: 6, damageReduction: -10});
 // export const Zoey = storeState({health: 100, speed: 7, damage: 8, damageReduction: -10});
-export const Bill = storeState({health: 100, speed: 6});
-export const Zoey = storeState({health: 100, speed: 7});
-export const Louis = storeState({health: 100, speed: 8});
-export const Francis = storeState({health: 100, speed: 5});
+export const Bill = storeState({name: "Bill", health: 100, speed: 6});
+export const Zoey = storeState({name: "Zoey", health: 100, speed: 7});
+export const Louis = storeState({name: "Louis", health: 100, speed: 8});
+export const Francis = storeState({name: "Francis", health: 100, speed: 5});
 
 // [Antagonists]
-// export const Witch = storeState({health: 60, speed: 7, damage: 10});
-export const Witch = storeState({health: 60, speed: 4});
-export const Tank = storeState({health: 100, speed: 2});
-export const Boomer = storeState({health: 50, speed: 4});
-export const Charger = storeState({health: 50, speed: 7});
-export const Hunter = storeState({health: 30, speed: 6});
-export const Jockey = storeState({health: 40, speed: 10});
-export const Spitter = storeState({health: 20, speed: 6});
+export const Spitter = storeState({name: "Spitter", health: 20, speed: 6});
+export const Hunter = storeState({name: "Hunter", health: 30, speed: 6});
+export const Jockey = storeState({name: "Jockey", health: 40, speed: 10});
+export const Boomer = storeState({name: "Boomer", health: 50, speed: 4});
+export const Charger = storeState({name: "Charger", health: 60, speed: 7});
+export const Witch = storeState({name: "Witch", health: 70, speed: 4});
+export const Tank = storeState({name: "Tank", health: 100, speed: 2});
 
-export const villainArr = [Witch, Tank, Boomer, Charger, Hunter, Jockey, Spitter];
+export const villainArr = [Spitter, Hunter, Jockey, Boomer, Charger, Witch, Tank];
+
 // This is a function factory. We can easily create more specific functions that alter a plant's soil, water, and light to varying degrees.
 export const changeState = (prop) => {
   return (value) => {
